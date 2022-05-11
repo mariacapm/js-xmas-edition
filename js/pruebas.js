@@ -17,6 +17,18 @@ function probarValidarNombre() {
   );
 }
 
+function probarValidarCiudad() {
+  console.assert(
+    validarCiudad("Buenos Aires") === "",
+    "validarCiudad falló con un nombre válido"
+  );
+
+  console.assert(
+    validarCiudad("") === "El campo ciudad no puede estar vacío",
+    "validarCiudad no validó que el campo no esté vacío"
+  );
+}
+
   );
 }
 
