@@ -29,6 +29,23 @@ function probarValidarCiudad() {
   );
 }
 
+function probarValidarDescripcionRegalo() {
+  console.assert(
+    validarDescripcionRegalo("") ===
+      "El campo descripción no puede estar vacío",
+    "ValidarDescripcionRegalo no validó que el campo no esté vacío"
+  );
+
+  console.assert(
+    validarDescripcionRegalo(
+      "jsjsjsjshjkadhkjncjncjnjnjkncjdksnakjhhhjnsjncscnasjcnjscnaklncjnakjsnjfdhhfhudcnladcnjnajknjksanjknakcnkjasnaskjjsaknjsknasckdh"
+    ) === "El campo descripción es muy largo",
+    "La función ValidarDescripcionRegalo no funcionó con una descripción correcta"
+  );
+
+  console.assert(
+    validarDescripcionRegalo("Regalo") === "",
+    "La función ValidarDescripcionRegalo no funcionó con una descripción correcta"
   );
 }
 
