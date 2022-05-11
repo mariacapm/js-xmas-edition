@@ -24,7 +24,7 @@ function probarValidarCiudad() {
   );
 
   console.assert(
-    validarCiudad("") === "El campo ciudad no puede estar vacío",
+    validarCiudad("") === "No has completado este campo",
     "validarCiudad no validó que el campo no esté vacío"
   );
 }
