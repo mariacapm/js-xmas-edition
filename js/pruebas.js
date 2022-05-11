@@ -50,3 +50,7 @@ function probarValidarDescripcionRegalo() {
 }
 
 probarValidarNombre();
+probarValidarCiudad();
+probarValidarDescripcionRegalo();
+
+
