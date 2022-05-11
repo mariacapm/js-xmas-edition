@@ -16,3 +16,13 @@ function validarCiudad(ciudad) {
   return "";
 }
 
+function validarDescripcionRegalo(descripcionRegalo) {
+  if (descripcionRegalo.length >= 100) {
+    return "El campo descripción es muy largo";
+  }
+
+  if (descripcionRegalo.length === 0) {
+    return "El campo descripción no puede estar vacío";
+  }
+  return "";
+}
