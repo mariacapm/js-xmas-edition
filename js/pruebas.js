@@ -12,6 +12,11 @@ function probarValidarNombre() {
   );
 
   console.assert(
+    validarNombre('12524445') === "El campo nombre sólo acepta letras",
+    'ValidarNombre no validó que el nombre sólo tenga letras.'
+  );
+
+  console.assert(
     validarNombre("Fabricio") === "",
     "validarNombre falló con un nombre válido"
   );
