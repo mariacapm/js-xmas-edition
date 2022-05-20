@@ -1,20 +1,3 @@
-document.querySelector("#enviar-carta").onclick = function (event) {
-  event.preventDefault();
-  const $form = document.querySelector("#carta-a-santa");
-
-  const nombre = $form.nombre.value;
-  const ciudad = $form.ciudad.value;
-  const comportamiento = $form.comportamiento.value;
-  const descripcionRegalo = $form["descripcion-regalo"].value;
-
-  console.log(nombre);
-  console.log(ciudad);
-  console.log(comportamiento);
-  console.log(descripcionRegalo);
-
-  
-};
-
 function validarNombre(nombre) {
   if (nombre.length === 0) {
     return "Este campo debe tener al menos 1 caracter";
@@ -40,6 +23,32 @@ function validarDescripcionRegalo(descripcionRegalo) {
 
   if (descripcionRegalo.length === 0) {
     return "El campo descripción no puede estar vacío";
+function validarFormulario(event) {
+
+  event.preventDefault(); //por Event Bubbling
+  
+  eliminarErrores();
+
+  const nombre = $form.nombre.value;
+  const ciudad = $form.ciudad.value;
+  const descripcionRegalo = $form["descripcion-regalo"].value;
+
+  const errorNombre = validarNombre(nombre);
+  const errorCiudad = validarCiudad(ciudad);
+  const errorDescripcionRegalo = validarDescripcionRegalo(descripcionRegalo);
+
+  const errores = {
+    nombre: errorNombre,
+    ciudad: errorCiudad,
+    'descripcion-regalo': errorDescripcionRegalo,
+  };
+  
+  const esExito = manejarErrores(errores) === 0;
+
+  if(esExito) {
+    $form.className = 'oculto';
+    document.querySelector('#exito').className = '';
+    redirigirPagina();
   }
   return "";
 function manejarErrores(errores) {
