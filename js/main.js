@@ -21,8 +21,6 @@ function validarDescripcionRegalo(descripcionRegalo) {
     return "El campo descripción es muy largo";
   }
 
-  if (descripcionRegalo.length === 0) {
-    return "El campo descripción no puede estar vacío";
 function validarFormulario(event) {
 
   event.preventDefault(); //por Event Bubbling
@@ -50,7 +48,9 @@ function validarFormulario(event) {
     document.querySelector('#exito').className = '';
     redirigirPagina();
   }
-  return "";
+
+}
+
 function manejarErrores(errores) {
   const llaves = Object.keys(errores);
   const $errores = document.querySelector('#errores');
@@ -78,4 +78,14 @@ function manejarErrores(errores) {
 
   return cantidadErrores;
 
+}
+
+const $form = document.querySelector("#carta-a-santa");
+$form.onsubmit = validarFormulario;
+
+function redirigirPagina() {
+  setTimeout(function(){
+    window.location.href = "wishlist.html"; 
+  }, 5000);
+  
 }
