@@ -20,7 +20,14 @@ function validarCiudad(ciudad) {
 function validarDescripcionRegalo(descripcionRegalo) {
   if (descripcionRegalo.length >= 100) {
     return "El campo descripción es muy largo";
+  } else if (descripcionRegalo.length === 0) {
+    return "El campo descripción no puede estar vacío";
+  } else if (!/^[a-z0-9]+$/i.test(descripcionRegalo)) {
+    return "El campo descripción solo puede tener números y letras";
+  } else {
+    return "";
   }
+}
 
 function validarFormulario(event) {
 
