@@ -288,7 +288,7 @@ El método `forEach` lo podemos ver [en MDN directamente](https://developer.mozi
   2. Le vamos a agregar la clase error usando `className` o `classList`
   
   3. Cada vez que haya un error, vamos a limpiar el valor del texto.
-    
+  
   4. Cuando no haya error, vamos a limpiar los errores.
   
   5. Finalmente, vamos a agregar los errores dentro del contendor `#errores`
@@ -307,8 +307,6 @@ El método `forEach` lo podemos ver [en MDN directamente](https://developer.mozi
    
   1. Vamos a esconder el formulario
   2. Vamos a mostrar el elemento con id `#exito` //explicar esta técnica
-  
-TAREA:
   3. En 5 segundos vamos redireccionar al usuario a `wishlist.html`,
   usando `setTimeout` y `window.location.href`.
 
