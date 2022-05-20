@@ -45,7 +45,7 @@ function probarValidarDescripcionRegalo() {
     validarDescripcionRegalo(
       "jsjsjsjshjkadhkjncjncjnjnjkncjdksnakjhhhjnsjncscnasjcnjscnaklncjnakjsnjfdhhfhudcnladcnjnajknjksanjknakcnkjasnaskjjsaknjsknasckdh"
     ) === "El campo descripción es muy largo",
-    "La función ValidarDescripcionRegalo no funcionó con una descripción correcta"
+    "ValidarDescripcionRegalo no funcionó con una descripción muy larga"
   );
 
   console.assert(
