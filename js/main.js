@@ -42,4 +42,31 @@ function validarDescripcionRegalo(descripcionRegalo) {
     return "El campo descripción no puede estar vacío";
   }
   return "";
+function manejarErrores(errores) {
+  const llaves = Object.keys(errores);
+  const $errores = document.querySelector('#errores');
+
+  let cantidadErrores = 0;
+
+  llaves.forEach(function(llaves) {
+    const error = errores[llaves];
+
+    if(error) {
+      cantidadErrores++;
+      $form[llaves].className = "error";
+      $form[llaves].value = '';
+
+      const $error = document.createElement('li');
+      $error.innerText = error;
+      $errores.appendChild($error);
+
+    } else {
+      $form[llaves].className = "";
+    }
+
+
+  });
+
+  return cantidadErrores;
+
 }
