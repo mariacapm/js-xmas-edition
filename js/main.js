@@ -97,3 +97,12 @@ function redirigirPagina() {
   }, 5000);
   
 }
+
+function eliminarErrores() {
+
+const listaErrores = document.getElementById('errores');
+  while (listaErrores.hasChildNodes()) {
+    listaErrores.removeChild(listaErrores.firstChild);
+  };
+}
+
