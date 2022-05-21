@@ -65,20 +65,20 @@ function manejarErrores(errores) {
 
   let cantidadErrores = 0;
 
-  llaves.forEach(function(llaves) {
-    const error = errores[llaves];
+  llaves.forEach(function(llave) {
+    const error = errores[llave];
 
     if(error) {
       cantidadErrores++;
-      $form[llaves].className = "error";
-      $form[llaves].value = '';
+      $form[llave].className = "error"; //funciona porque el name del form coincide con el key
+      $form[llave].value = '';
 
       const $error = document.createElement('li');
       $error.innerText = error;
       $errores.appendChild($error);
 
     } else {
-      $form[llaves].className = "";
+      $form[llave].className = "";
     }
 
 
