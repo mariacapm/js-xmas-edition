@@ -30,9 +30,8 @@ function validarDescripcionRegalo(descripcionRegalo) {
 }
 
 function validarFormulario(event) {
-
   event.preventDefault(); //por Event Bubbling
-  
+
   eliminarErrores();
 
   const nombre = $form.nombre.value;
@@ -46,63 +45,55 @@ function validarFormulario(event) {
   const errores = {
     nombre: errorNombre,
     ciudad: errorCiudad,
-    'descripcion-regalo': errorDescripcionRegalo,
+    "descripcion-regalo": errorDescripcionRegalo,
   };
-  
+
   const esExito = manejarErrores(errores) === 0;
 
-  if(esExito) {
-    $form.className = 'oculto';
-    document.querySelector('#exito').className = '';
+  if (esExito) {
+    $form.className = "oculto";
+    document.querySelector("#exito").className = "";
     redirigirPagina();
   }
-
 }
 
 function manejarErrores(errores) {
   const llaves = Object.keys(errores);
-  const $errores = document.querySelector('#errores');
+  const $errores = document.querySelector("#errores");
 
   let cantidadErrores = 0;
 
-  llaves.forEach(function(llave) {
+  llaves.forEach(function (llave) {
     const error = errores[llave];
 
-    if(error) {
+    if (error) {
       cantidadErrores++;
-      $form[llave].className = "error"; //funciona porque el name del form coincide con el key
-      $form[llave].value = '';
+      $form[llave].className = "error"; //funciona porque el name del form coincide exactamente  con el key
+      $form[llave].value = ""; //para que si hay error, limpie el campo
 
-      const $error = document.createElement('li');
+      const $error = document.createElement("li");
       $error.innerText = error;
       $errores.appendChild($error);
-
     } else {
       $form[llave].className = "";
     }
-
-
   });
 
   return cantidadErrores;
-
 }
 
 const $form = document.querySelector("#carta-a-santa");
 $form.onsubmit = validarFormulario;
 
 function redirigirPagina() {
-  setTimeout(function(){
-    window.location.href = "wishlist.html"; 
+  setTimeout(function () {
+    window.location.href = "wishlist.html";
   }, 5000);
-  
 }
 
 function eliminarErrores() {
-
-const listaErrores = document.getElementById('errores');
+  const listaErrores = document.getElementById("errores");
   while (listaErrores.hasChildNodes()) {
     listaErrores.removeChild(listaErrores.firstChild);
-  };
+  }
 }
-
