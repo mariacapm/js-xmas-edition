@@ -49,6 +49,22 @@ function manejarErrores(errores) {
   return cantidadErrores;
 }
 
+let cantidadErrores;
+
+function manejarErroresEdades(edad) {
+  cantidadErrores = 0;
+  const edadId = arrayId[i];
+  const errorEdad = validarEdades(edad);
+  if (errorEdad !== "") {
+    cantidadErrores++;
+    document.getElementById(edadId).className = "error";
+    document.getElementById(edadId).value = "";
+  } else {
+    document.getElementById(edadId).className = "";
+  }
+  return cantidadErrores;
+}
+
 function calcularMenor() {
   arrayEdades.sort(function (a, b) {
     return a - b;
