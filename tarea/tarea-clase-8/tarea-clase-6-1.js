@@ -79,6 +79,11 @@ function manejarErroresEdades(edad) {
   return cantidadErrores;
 }
 
+function limpiarCampos() {
+  arrayId = [];
+  arrayEdades = [];
+}
+
 function calcularMenor() {
   arrayEdades.sort(function (a, b) {
     return a - b;
