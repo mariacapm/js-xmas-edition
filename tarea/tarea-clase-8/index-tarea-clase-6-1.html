@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea Clase 6</title>
+    <link rel="stylesheet" href="styles-6-1.css">
+</head>
+<body>
+    <form id="calculo-salarios">
+        <label for="cantidad-miembros-familia">¿Cuántos miembros tiene tu familia?</label>
+        <input type="number" name="cantidad-miembros-familia" id="cantidad-miembros-familia">
+        <input type="submit" value="Enviar" id="boton-enviar">
+        <input type="button" value="Resetear" id="boton-resetear">
+        <input type="button" value="Calcular" id="boton-calcular" class="oculto">
+        <div id="edades-miembros-familia">
+
+        </div>
+    </form>
+    <div id="resultados" class="oculto">
+    <h1>Resultados</h1>
+    <p id="mayor">Edad del integrante más grande de tu familia: </p>
+    <p id="menor">Edad del integrante más joven de tu familia: </p>
+    <p id="promedio">El promedio de edad de tu familia es: </p>
+    </div>
+    <script src="tarea-clase-6-1.js"></script>
+    <script src="pruebas-1.js"></script>
+</body>
+</html>
