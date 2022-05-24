@@ -1,0 +1,18 @@
+* {
+    background-color:papayawhip;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input {
+    margin-bottom: 0.5rem;
+}
+
+.oculto {
+    visibility: hidden;
+}
+
+.error {
+    border-color: red;
+    border-width: 2px;
+}
+
