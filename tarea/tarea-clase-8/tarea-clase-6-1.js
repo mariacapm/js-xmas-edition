@@ -30,3 +30,22 @@ function validarEdades(edades) {
   return "";
 }
 
+function manejarErrores(errores) {
+  const keys = Object.keys(errores);
+
+  let cantidadErrores = 0;
+
+  keys.forEach(function (key) {
+    const error = errores[key];
+
+    if (error) {
+      cantidadErrores++;
+      $form[key].className = "error";
+      $form[key].value = "";
+    } else {
+      $form[key].className = "";
+    }
+  });
+  return cantidadErrores;
+}
+
