@@ -49,6 +49,15 @@ function manejarErrores(errores) {
   return cantidadErrores;
 }
 
+let arrayId = [];
+
+function obtenerNombreId() {
+  for (i = 1; i <= cantidadPersonas; i++) {
+    const id = "persona" + i;
+    arrayId.push(id);
+  }
+}
+
 let arrayEdades = [];
 let edad;
 
