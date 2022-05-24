@@ -49,3 +49,29 @@ function manejarErrores(errores) {
   return cantidadErrores;
 }
 
+function calcularMenor() {
+  arrayEdades.sort(function (a, b) {
+    return a - b;
+  });
+  const menor = arrayEdades[0];
+  document.querySelector("#menor").insertAdjacentText("beforeend", menor);
+}
+
+function calcularMayor() {
+  arrayEdades.sort(function (a, b) {
+    return b - a;
+  });
+  const mayor = arrayEdades[0];
+  document.querySelector("#mayor").insertAdjacentText("beforeend", mayor);
+}
+
+function calcularPromedio() {
+  let suma = 0;
+  let edad;
+  for (edad of arrayEdades) {
+    suma += edad;
+  }
+  let promedio = suma / arrayEdades.length;
+  document.querySelector("#promedio").insertAdjacentText("beforeend", promedio);
+}
+
