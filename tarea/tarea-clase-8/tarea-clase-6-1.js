@@ -49,6 +49,10 @@ function manejarErrores(errores) {
   return cantidadErrores;
 }
 
+function deshabilitarBoton(boton) {
+  boton.setAttribute("disabled", "");
+}
+
 function crearCampoPersona(cantidadPersonas) {
   let i;
   for (i = 1; i <= cantidadPersonas; i++) {
