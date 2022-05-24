@@ -49,6 +49,20 @@ function manejarErrores(errores) {
   return cantidadErrores;
 }
 
+let arrayEdades = [];
+let edad;
+
+function obtenerEdades() {
+  for (i = 0; i < arrayId.length; i++) {
+    edad = Number(document.getElementById(arrayId[i]).value);
+    if (manejarErroresEdades(edad) !== 0) {
+      return cantidadErrores;
+    } else if (manejarErroresEdades(edad) == 0){
+      arrayEdades.push(edad);
+  }
+}
+}
+
 let cantidadErrores;
 
 function manejarErroresEdades(edad) {
