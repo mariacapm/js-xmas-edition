@@ -49,6 +49,10 @@ function manejarErrores(errores) {
   return cantidadErrores;
 }
 
+function quitarHidden(elemento) {
+  elemento.classList.remove("oculto");
+}
+
 const $botonCalcular = document.querySelector("#boton-calcular");
 
 $botonCalcular.onclick = function (event) {
