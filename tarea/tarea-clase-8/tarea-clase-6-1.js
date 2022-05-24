@@ -30,6 +30,24 @@ function validarEdades(edades) {
   return "";
 }
 
+function validarFormulario(event) {
+  cantidadPersonas = $cantidadGrupoFamiliar.value;
+
+  const errorCantidadPersonas = validarCantidadGrupoFamiliar(cantidadPersonas);
+
+  errores["cantidad-miembros-familia"] = errorCantidadPersonas;
+
+  const esExito = manejarErrores(errores) === 0;
+
+  if (esExito) {
+    crearCampoPersona(cantidadPersonas);
+    quitarHidden($botonCalcular);
+    deshabilitarBoton($botonEnviar);
+  }
+
+  event.preventDefault();
+}
+
 function manejarErrores(errores) {
   const keys = Object.keys(errores);
 
