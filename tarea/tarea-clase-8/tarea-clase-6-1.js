@@ -49,6 +49,31 @@ function manejarErrores(errores) {
   return cantidadErrores;
 }
 
+function crearCampoPersona(cantidadPersonas) {
+  let i;
+  for (i = 1; i <= cantidadPersonas; i++) {
+    crearLabel(i);
+    crearInput(i);
+  }
+}
+
+function crearInput(i) {
+  const nodoInput = document.createElement("input");
+  nodoInput.type = "number";
+  nodoInput.name = "persona" + i;
+  nodoInput.id = "persona" + i;
+  document.querySelector("#edades-miembros-familia").appendChild(nodoInput);
+}
+
+function crearLabel(i) {
+  const nodoLabel = document.createElement("label");
+  nodoLabel.htmlFor = "persona" + i;
+  nodoLabel.innerText = "Edad Integrante " + i + ":";
+  document.querySelector("#edades-miembros-familia").appendChild(nodoLabel);
+  const saltoLinea = document.createElement("br");
+  nodoLabel.before(saltoLinea);
+}
+
 function quitarHidden(elemento) {
   elemento.classList.remove("oculto");
 }
