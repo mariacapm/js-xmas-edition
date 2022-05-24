@@ -49,6 +49,28 @@ function manejarErrores(errores) {
   return cantidadErrores;
 }
 
+const $botonCalcular = document.querySelector("#boton-calcular");
+
+$botonCalcular.onclick = function (event) {
+  limpiarCampos();
+  obtenerNombreId();
+  obtenerEdades();
+
+  const esExito = cantidadErrores === 0;
+
+  if (esExito) {
+    const $resultados = document.querySelector("#resultados");
+    quitarHidden($resultados);
+    calcularMayor();
+    calcularMenor();
+    calcularPromedio();
+    deshabilitarBoton($botonCalcular);
+  
+  }
+
+  event.preventDefault();
+};
+
 let arrayId = [];
 
 function obtenerNombreId() {
