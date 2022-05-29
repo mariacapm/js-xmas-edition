@@ -138,7 +138,7 @@ $botonCalcular.onclick = function (event) {
 let arrayId = [];
 
 function obtenerNombreId() {
-  for (i = 1; i <= cantidadPersonas; i++) {
+  for (let i = 1; i <= cantidadPersonas; i++) {
     const id = "persona" + i;
     arrayId.push(id);
   }
