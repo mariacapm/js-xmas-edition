@@ -145,19 +145,8 @@ function obtenerNombreId() {
 }
 
 let arrayEdades = [];
-let edad;
 
-function obtenerEdades() {
-  for (i = 0; i < arrayId.length; i++) {
-    edad = Number(document.getElementById(arrayId[i]).value);
-    if (manejarErroresEdades(edad) !== 0) {
-      return cantidadErrores;
-    } else if (manejarErroresEdades(edad) == 0){
-      arrayEdades.push(edad);
-  }
-}
-}
-
+// let j;
 let cantidadErrores;
 
 function manejarErroresEdades(edad) {
@@ -172,6 +161,12 @@ function manejarErroresEdades(edad) {
     document.getElementById(edadId).className = "";
   }
   return cantidadErrores;
+
+function obtenerEdades() {
+  arrayId.forEach(function (edad, index) {
+    arrayEdades.push(Number(document.getElementById(arrayId[index]).value));
+    return edad;
+  });
 }
 
 function limpiarCampos() {
