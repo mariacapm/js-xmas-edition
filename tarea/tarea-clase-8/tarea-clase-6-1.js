@@ -61,7 +61,7 @@ function validarFormulario(event) {
   event.preventDefault();
 }
 
-function manejarErrores(errores) {
+function manejarErroresCantidadPersonas(errores) {
   const keys = Object.keys(errores);
 
   let cantidadErrores = 0;
