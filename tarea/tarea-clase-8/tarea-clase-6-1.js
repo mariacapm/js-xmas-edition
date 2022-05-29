@@ -30,6 +30,18 @@ function validarEdades(edades) {
   return "";
 }
 
+const $botonEnviar = document.querySelector("#boton-enviar");
+
+const $cantidadGrupoFamiliar = document.querySelector(
+  "#cantidad-miembros-familia"
+);
+
+let cantidadPersonas;
+
+$botonEnviar.onclick = validarFormulario;
+
+
+
 function validarFormulario(event) {
   cantidadPersonas = $cantidadGrupoFamiliar.value;
 
