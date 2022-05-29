@@ -85,8 +85,7 @@ function deshabilitarBoton(boton) {
 }
 
 function crearCampoPersona(cantidadPersonas) {
-  let i;
-  for (i = 1; i <= cantidadPersonas; i++) {
+  for (let i = 1; i <= cantidadPersonas; i++) {
     crearLabel(i);
     crearInput(i);
   }
