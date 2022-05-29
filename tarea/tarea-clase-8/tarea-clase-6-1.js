@@ -116,19 +116,20 @@ const $botonCalcular = document.querySelector("#boton-calcular");
 
 $botonCalcular.onclick = function (event) {
   limpiarCampos();
+  eliminarErrores();
   obtenerNombreId();
-  obtenerEdades();
+  manejarErroresEdades();
 
   const esExito = cantidadErrores === 0;
 
   if (esExito) {
+    obtenerEdades();
     const $resultados = document.querySelector("#resultados");
     quitarHidden($resultados);
     calcularMayor();
     calcularMenor();
     calcularPromedio();
     deshabilitarBoton($botonCalcular);
-  
   }
 
   event.preventDefault();
