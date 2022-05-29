@@ -6,6 +6,8 @@ Al hacer click en "calcular", mostrar en un elemento pre-existente la mayor edad
 Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuevamente, borrando los inputs ya creados (investigar cómo en MDN).
 */
 
+const $form = document.querySelector("#calculo-salarios");
+
 function validarCantidadGrupoFamiliar($cantidadGrupoFamiliar) {
   if ($cantidadGrupoFamiliar === "") {
     return "Este campo no puede estar vacio";
@@ -149,18 +151,29 @@ let arrayEdades = [];
 // let j;
 let cantidadErrores;
 
-function manejarErroresEdades(edad) {
+function manejarErroresEdades() {
+  let edad;
   cantidadErrores = 0;
-  const edadId = arrayId[i];
-  const errorEdad = validarEdades(edad);
-  if (errorEdad !== "") {
-    cantidadErrores++;
-    document.getElementById(edadId).className = "error";
-    document.getElementById(edadId).value = "";
-  } else {
-    document.getElementById(edadId).className = "";
-  }
-  return cantidadErrores;
+  const $errores = document.querySelector("#errores");
+
+  arrayId.forEach(function (miEdad, index) {
+    edad = Number(document.getElementById(arrayId[index]).value);
+    const errorEdad = validarEdades(edad);
+    if (errorEdad !== "") {
+      cantidadErrores++;
+      document.getElementById(arrayId[index]).className = "error";
+      document.getElementById(arrayId[index]).value = "";
+
+      const $error = document.createElement("li");
+      $error.innerText = errorEdad;
+      $errores.appendChild($error);
+    } else {
+      document.getElementById(arrayId[index]).className = "";
+    }
+
+    return miEdad;
+  });
+}
 
 function obtenerEdades() {
   arrayId.forEach(function (edad, index) {
