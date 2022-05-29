@@ -44,12 +44,13 @@ $botonEnviar.onclick = validarFormulario;
 
 function validarFormulario(event) {
   cantidadPersonas = $cantidadGrupoFamiliar.value;
+  let errores = {};
 
   const errorCantidadPersonas = validarCantidadGrupoFamiliar(cantidadPersonas);
 
   errores["cantidad-miembros-familia"] = errorCantidadPersonas;
 
-  const esExito = manejarErrores(errores) === 0;
+  const esExito = manejarErroresCantidadPersonas(errores) === 0;
 
   if (esExito) {
     crearCampoPersona(cantidadPersonas);
