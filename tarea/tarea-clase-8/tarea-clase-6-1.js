@@ -174,6 +174,13 @@ function limpiarCampos() {
   arrayEdades = [];
 }
 
+function eliminarErrores() {
+  const listaErrores = document.getElementById("errores");
+  while (listaErrores.hasChildNodes()) {
+    listaErrores.removeChild(listaErrores.firstChild);
+  }
+}
+
 function calcularMenor() {
   arrayEdades.sort(function (a, b) {
     return a - b;
