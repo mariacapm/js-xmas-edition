@@ -1,0 +1,22 @@
+* {
+    background-color: #EBDEF0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+label {
+    display: block;
+}
+
+button {
+    background-color:honeydew;
+    border-width: thin;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #DAF7A6;
+}
+
+.error {
+    border-color: red;
+}
